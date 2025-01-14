@@ -1,0 +1,20 @@
+To fix issues with `calc()`, ensure that:
+
+1. **Parent element has a defined width:** If using percentages within `calc()`, the parent element must have its width explicitly set (either directly or through its own parent element).
+2. **Correct operator precedence:** Use parentheses `()` to control the order of operations in complex calculations. 
+3. **Spaces around operators:** Include spaces around operators (`+`, `-`, `*`, `/`) in `calc()` to ensure that they are parsed correctly.
+
+Here's an example of correcting an erroneous usage:
+
+```css
+/* Incorrect: Percentage calculation on an element with undefined width */
+#element { width: calc(100% - 10px); }
+
+/* Correct: Set parent width and ensure correct spacing */
+.parent {
+  width: 500px; /* Define parent's width */
+}
+
+#element { width: calc(100% - 10px); }
+```
+By carefully considering these points, you can avoid many issues when utilizing `calc()` effectively in your CSS.
